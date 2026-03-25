@@ -45,21 +45,21 @@ function addCard(teamMembersArray) {
     const member = teamMembersArray[i];
 
     const cardColumn = document.createElement('div');
-    cardColumn.classList.add('col-12', 'col-md-4');
+    cardColumn.classList.add('col-12', 'col-md-6', 'col-lg-3');
 
 const cardDiv = document.createElement('div');
-cardDiv.classList.add('card', 'mb-3', 'bg-black')
+cardDiv.classList.add('card', 'mb-3', 'bg-black', 'w-auto');
 
-    const memberCard = `
+const memberCard = `
     <div class="row g-0">
       <div class="col-md-4">
-        <img src="./assets/${member.img}" class="img-fluid " alt="...">
+        <img src="./assets/${member.img}" class="img-fluid" alt="${member.name}">
       </div>
       <div class="col-md-8">
-        <div class="card-body">
+        <div class="card-body py-1">
           <h5 class="card-title text-white">${member.name}</h5>
           <p class="card-text text-white">${member.role}</p>
-          <p class="card-text text-info">${member.email}</p>
+          <p class="card-text text-info mb-0">${member.email}</p>
         </div>
       </div>
     </div>
