@@ -36,3 +36,35 @@ const teamMembers = [
     img: "img/female3.png"
   }
 ];
+
+
+function addCard (teamMembersArray) {
+  
+  for (let i = 0; i < teamMembersArray.length; i++) {
+  const cardBox = document.getElementById('card-box');
+  const member = teamMembersArray[i];
+  const cardDiv = document.createElement('div');
+  cardDiv.classList.add('card', 'mb-3', 'bg-black', 'col-3');
+
+  const memberCard = `
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="./assets/${member.img}" class="img-fluid " alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title text-white">${member.name}</h5>
+        <p class="card-text text-white">${member.role}</p>
+        <p class="card-text text-info">${member.email}</p>
+      </div>
+    </div>
+  </div>
+`;
+
+cardDiv.innerHTML = memberCard
+cardBox.appendChild(cardDiv);
+  
+}
+}
+
+addCard(teamMembers);
