@@ -53,7 +53,7 @@ function addCard(teamMembersArray) {
     const memberCard = `
     <div class="row g-0">
       <div class="col-md-4">
-        <img src="./assets/${member.img}" class="img-fluid" alt="${member.name}">
+        <img src="./assets/${member.img}" id="card-img" class="img-fluid" alt="${member.name}">
       </div>
       <div class="col-md-8">
         <div class="card-body py-1">
@@ -82,13 +82,14 @@ formInput.addEventListener('submit', function (e) {
   const roleInput = document.getElementById('role-input').value;
   const emailInput = document.getElementById('email-input').value;
 
-  const newCard = { name: nameInput, role: roleInput, email: emailInput }
+
+  const newCard = { name: nameInput, role: roleInput, email: emailInput, img: "./img/custom.png" }
 
   teamMembers.push(newCard);
 
 
   console.log(teamMembers);
-  addCard(teamMembers);
+  addCard([newCard]);
 
 })
 
