@@ -1,7 +1,17 @@
-.title {
+.story-font {
     font-family: Story Script, sans-serif;
-    font-size:5rem;
+}
+
+.quicksand-font {
+    font-family: Quicksand, sans-serif;
+}
+
+.title-color {
     color: #fc3879;
+}
+
+.title {
+    font-size: 5rem;
 }
 
 .subtitle {

@@ -45,7 +45,7 @@ function addCard(teamMembersArray) {
     const member = teamMembersArray[i];
 
     const cardColumn = document.createElement('div');
-    cardColumn.classList.add('col-12', 'col-md-6', 'col-lg-3');
+    cardColumn.classList.add('col-12', 'col-md-4', 'col-lg-3');
 
 const cardDiv = document.createElement('div');
 cardDiv.classList.add('card', 'mb-3', 'bg-black', 'w-auto');
@@ -73,3 +73,22 @@ const memberCard = `
 }
 
 addCard(teamMembers);
+
+const formInput = document.getElementById('card-input');
+
+formInput.addEventListener('submit', function (e) {
+  e.preventDefault();
+  const nameInput = document.getElementById('name-input').value;
+  const roleInput = document.getElementById('role-input').value;
+  const emailInput = document.getElementById('email-input').value;
+
+  const newCard = {name: nameInput, role: roleInput, email: emailInput}
+
+  teamMembers.push(newCard);
+
+  
+  console.log(teamMembers);
+  addCard(teamMembers);
+
+})
+

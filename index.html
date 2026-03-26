@@ -11,26 +11,47 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Story+Script&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 
 <body>
     <header class="container">
-        <h1 class="title text-center m-3 p-2">
-            Meet our Team
+        <h1 class="title text-center m-3 p-2 story-font title-color">
+            Link up with the fam
         </h1>
         <p class="subtitle text-center p-2">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora enim, eaque aperiam necessitatibus dolore
-            ipsa fugit recusandae ullam explicabo sapiente excepturi veritatis ab, eligendi laudantium tenetur et! Nam,
-            fugit ullam!
+            Bruv ipsum dolor sit amet, proper vibes innit. Mandem pull up to the sesh, chattin&apos; bare waffle like it&apos;s
+            calm. Tingz get a bit mad when Dave starts gassin&apos;, but everyone&apos;s chill, just grabbin&apos; a cheeky pint and
+            crackin&apos; on.
         </p>
     </header>
 
     <main class="container">
-      <div id="card-box" class="d-flex flex-row flex-wrap justify-content-evenly gap-1">
-
-      </div>
+        <div id="card-box" class="d-flex flex-row flex-wrap justify-content-evenly gap-1">
+            <!-- card insertion point -->
+        </div>
     </main>
+
+    <footer class="container w-50 mt-5">
+        <h2 class="story-font title-color text-center mb-4">Just joined the gang? Pop your card in!</h2>
+        <form id="card-input">
+            <div class="mb-3">
+                <label for="name-input" class="form-label quicksand-font">Pop your name in</label>
+                <input type="text" class="form-control" id="name-input">
+            </div>
+            <div class="mb-3">
+                <label for="role-input" class="form-label quicksand-font">Chuck your role in the family</label>
+                <input type="text" class="form-control" id="role-input">
+            </div>
+            <div class="mb-3">
+                <label for="email-input" class="form-label quicksand-font">Whack your work email in</label>
+                <input type="email" class="form-control" id="email-input">
+            </div>
+
+            <button type="submit" class="btn btn-primary story-font">🪄 Do your magic, mate.</button>
+        </form>
+
+    </footer>
 
     <!-- script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
