@@ -57,9 +57,9 @@ function addCard(teamMembersArray) {
       </div>
       <div class="col-md-8">
         <div class="card-body py-1">
-          <h5 class="card-title text-white">${member.name}</h5>
-          <p class="card-text text-white">${member.role}</p>
-          <p class="card-text text-info mb-0">${member.email}</p>
+          <h5 class="card-title text-white quicksand-font">${member.name}</h5>
+          <p class="card-text text-white quicksand-font mb-1">${member.role}</p>
+          <p class="card-text text-info mb-0 text-nowrap">${member.email}</p>
         </div>
       </div>
     </div>
