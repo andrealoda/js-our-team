@@ -53,7 +53,7 @@ function addCard(teamMembersArray) {
     const memberCard = `
     <div class="row g-0">
       <div class="col-md-4">
-        <img src="./assets/${member.img}" id="card-img" class="img-fluid" alt="${member.name}">
+        <img src="./assets/${member.img}" class="img-fluid" alt="${member.name}">
       </div>
       <div class="col-md-8">
         <div class="card-body py-1">
