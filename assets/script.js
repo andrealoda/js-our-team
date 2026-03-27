@@ -37,20 +37,9 @@ const teamMembers = [
   }
 ];
 
-
-function addCard(teamMembersArray) {
-  const cardBox = document.getElementById('card-box');
-
-  for (let i = 0; i < teamMembersArray.length; i++) {
-    const member = teamMembersArray[i];
-
-    const cardColumn = document.createElement('div');
-    cardColumn.classList.add('col-12', 'col-md-4', 'col-lg-3');
-
-    const cardDiv = document.createElement('div');
-    cardDiv.classList.add('card', 'mb-3', 'bg-black', 'w-auto');
-
-    const memberCard = `
+// logica per la renderizzazione delle card
+function renderCard(member) {
+  const memberCard = `
     <div class="row g-0">
       <div class="col-md-4">
         <img src="./assets/${member.img}" class="img-fluid" alt="${member.name}">
@@ -64,20 +53,49 @@ function addCard(teamMembersArray) {
       </div>
     </div>
 `;
+  return memberCard;
 
-    cardDiv.innerHTML = memberCard;
-    cardColumn.appendChild(cardDiv);
-    cardBox.appendChild(cardColumn);
+}
 
+// aggiungiamo la card renderizzata al DOM
+function addCard(memberCard) {
+  const cardBox = document.getElementById('card-box');
+
+  const cardColumn = document.createElement('div');
+  cardColumn.classList.add('col-12', 'col-md-4', 'col-lg-3');
+
+  const cardDiv = document.createElement('div');
+  cardDiv.classList.add('card', 'mb-3', 'bg-black', 'w-auto');
+
+
+  cardDiv.innerHTML = memberCard;
+  cardColumn.appendChild(cardDiv);
+  cardBox.appendChild(cardColumn);
+
+}
+
+// suotiamo il container delle card e renderizziamo i singoli oggetti dell'array
+function getMember(teamMembersArray) {
+  const cardBox = document.getElementById('card-box');
+  cardBox.innerHTML = "";
+
+
+  for (let i = 0; i < teamMembersArray.length; i++) {
+    const member = teamMembersArray[i];
+
+    const renderedCard = renderCard(member);
+
+    addCard(renderedCard);
   }
 }
 
-addCard(teamMembers);
 
+
+
+// aggiungiamo le nuove card che arrivano dal form in pagina
 const formInput = document.getElementById('card-input');
 
-
-formInput.addEventListener('submit', function (e) {
+function inputHandler(e) {
   e.preventDefault();
   const nameInput = document.getElementById('name-input').value;
   const roleInput = document.getElementById('role-input').value;
@@ -87,10 +105,14 @@ formInput.addEventListener('submit', function (e) {
   const newCard = { name: nameInput, role: roleInput, email: emailInput, img: "./img/custom.png" }
 
   teamMembers.push(newCard);
+  const renderedCard = renderCard(newCard);
+
+  addCard(renderedCard);
 
 
-  console.log(teamMembers);
-  addCard([newCard]);
+}
 
-})
+getMember(teamMembers);
+formInput.addEventListener('submit', inputHandler);
+
 
