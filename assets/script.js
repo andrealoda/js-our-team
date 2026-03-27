@@ -48,7 +48,7 @@ function renderCard(member) {
         <div class="card-body py-1">
           <h5 class="card-title text-white quicksand-font">${member.name}</h5>
           <p class="card-text text-white quicksand-font mb-1">${member.role}</p>
-          <p class="card-text text-info mb-0 text-nowrap">${member.email}</p>
+          <p class="card-text text-info mb-0 text-nowrap small">${member.email}</p>
         </div>
       </div>
     </div>
@@ -62,7 +62,7 @@ function addCard(memberCard) {
   const cardBox = document.getElementById('card-box');
 
   const cardColumn = document.createElement('div');
-  cardColumn.classList.add('col-12', 'col-md-4', 'col-lg-3');
+  cardColumn.classList.add('col-12', 'col-lg-4');
 
   const cardDiv = document.createElement('div');
   cardDiv.classList.add('card', 'mb-3', 'bg-black', 'w-auto');
